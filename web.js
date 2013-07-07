@@ -2,12 +2,7 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
-var buff;
-fs.readFile("index.html", function(err, data) {
-
-	if (err) throw err;
-	buff = data;
-}
+var buff = fs.readFileSync("index.html");
 
 var str = buff.toString();
 
